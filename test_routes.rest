@@ -1,0 +1,40 @@
+### Gets all contact request
+GET http://localhost:3001/api/persons
+
+### Gets info about contacts
+GET http://localhost:3001/info
+
+### Gets contact by id
+GET http://localhost:3001/api/persons/1
+
+### Gets contact by id and response 404 if not found
+GET http://localhost:3001/api/persons/10
+
+### Delete contact from backend
+DELETE http://localhost:3001/api/persons/2
+
+### Test post to api endpoint
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+
+{
+    "name": "Desmond Oghini",
+    "number": "+9-91-19212"
+}
+
+### Test post to api endpoint
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+
+{}
+
+### Test post to api endpoint
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+
+{
+    "name": "Daniel Oghini"
+}
