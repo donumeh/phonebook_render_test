@@ -60,6 +60,10 @@ const generateId = () => {
   return String(newId);
 };
 
+app.get('/', (request, response) => {
+  response.send('<h1>Hello World</h1>');
+})
+
 app.get('/api/persons', (resquest, response) => {
   response.json(persons);
 });
