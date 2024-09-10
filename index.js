@@ -5,9 +5,10 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(express.static('dist'));
 app.use(cors());
 app.use(express.json());
+app.use(express.static('dist'));
+
 
 app.use(morgan( function (tokens, req, res) {
     console.log(
@@ -113,6 +114,10 @@ app.post('/api/persons', (request, response) => {
   }
 });
 
+const unknownEndpoint = (request, response) => {
+  response.status(404).send({error: 'unknown endpoint'});
+}
+app.use(unknownEndpoint);
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
